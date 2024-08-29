@@ -1,0 +1,189 @@
+body {
+    background-color: grey;
+}
+
+.fotoAtendente {
+    margin-top: 50px;
+    width: 120px;
+    height: 120px;
+}
+
+/* /// TEXTPS /// */
+
+span {
+    margin: auto;
+}
+
+/* /// MODAL /// */
+
+.modalCaixa {
+    margin: 0px;
+    padding: 25px;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha o conteúdo na parte inferior */
+    justify-content: flex-end; /* Alinha os itens internamente na parte de baixo */
+}
+
+.modalJanela {
+    margin-bottom: 75px;
+    width: 350px;
+    height: 70%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px;
+    display: block;
+    overflow: hidden;
+    z-index: 101;
+    position: absolute;
+}
+
+#modalContent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.modalFechar {
+    top: 15px;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255, 0.3);
+    transition: opacity 3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    cursor: pointer;
+}
+
+.modalFechar:hover {
+    background-color: rgb(255, 255, 255, 0.5);
+}
+
+.modalAvatar {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.modalBalao {
+    background-color: #e5dcd5;
+    margin: -2px;
+    padding: 5px;
+    width: 150px;
+    height: 80px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 2s ease, visibility 2s ease;
+    z-index: 102;
+    position: relative;
+}
+
+#balaoTriangulo {
+    display: inline-block;
+    margin-right: 20px;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #e5dcd5;
+  }
+
+.modalFoto {
+    margin: 0;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    z-index: 101;
+    display: block;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* /// FUNÇÕES /// */
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 3s ease, visibility 3s ease;
+}
+
+.modalJanela:not(.hidden) {
+
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modalBalao:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* /// TELAS MENORES /// */
+
+@media (max-width: 768px) {
+    .modalCaixa {
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+    }
+
+    .modalJanela {
+        width: 100vw;
+        height: 100vh;
+        margin-bottom: 0;
+        border-radius: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .modalFechar {
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+    }
+
+    .modalBalao {
+        width: 80%;
+        height: auto;
+        margin: 10px auto;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .modalFoto {
+        width: 80px;
+        height: 80px;
+    }
+}
