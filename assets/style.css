@@ -1,5 +1,22 @@
 body {
     background-color: grey;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* /// IMAGENS /// */
+
+.icones {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.icones:hover {
+    width: 40px;
+    height: 40px;
+    transition: opacity 3s ease;
 }
 
 .fotoAtendente {
@@ -8,7 +25,7 @@ body {
     height: 120px;
 }
 
-/* /// TEXTPS /// */
+/* /// TEXTOS /// */
 
 span {
     margin: auto;
@@ -17,7 +34,7 @@ span {
 /* /// MODAL /// */
 
 .modalCaixa {
-    margin: 0px;
+    margin: 0;
     padding: 25px;
     right: 0;
     bottom: 0;
@@ -27,8 +44,8 @@ span {
     z-index: 100;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Alinha o conteúdo na parte inferior */
-    justify-content: flex-end; /* Alinha os itens internamente na parte de baixo */
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 .modalJanela {
@@ -41,6 +58,7 @@ span {
     overflow: hidden;
     z-index: 101;
     position: absolute;
+    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
 }
 
 #modalContent {
@@ -52,24 +70,24 @@ span {
     position: relative;
 }
 
-.modalFechar {
-    top: 15px;
-    left: 50%;
-    width: 30px;
-    height: 30px;
+.caixaBotao {
+    top: 10px;
+    width: 40px;
+    height: 40px;
     border-radius: 50px;
-    border: 1px solid rgb(255, 255, 255, 0.5);
-    background-color: rgb(255, 255, 255, 0.3);
-    transition: opacity 3s ease;
-    display: flex;
+    border: 0px;
     align-items: center;
     justify-content: center;
+    display: flex;
     position: absolute;
-    cursor: pointer;
 }
 
-.modalFechar:hover {
-    background-color: rgb(255, 255, 255, 0.5);
+.iconeAumentar {
+    right: 90px;
+}
+
+.iconeFechar {
+    right: 40px;
 }
 
 .modalAvatar {
@@ -105,7 +123,7 @@ span {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 15px solid #e5dcd5;
-  }
+}
 
 .modalFoto {
     margin: 0;
@@ -133,7 +151,6 @@ span {
 }
 
 .modalJanela:not(.hidden) {
-
     opacity: 1;
     visibility: visible;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -145,7 +162,22 @@ span {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* /// TELAS MENORES /// */
+/* /// TELAS /// */
+
+@media (min-width: 769px) {
+    .telaCheia {
+        width: 95%;
+        height: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: fixed;
+    }
+
+    .iconeAumentar {
+        display: flex;
+    }
+}
 
 @media (max-width: 768px) {
     .modalCaixa {
@@ -164,7 +196,11 @@ span {
         left: 0;
     }
 
-    .modalFechar {
+    .iconeAumentar {
+        display: none;
+    }
+
+    .botaoFechar {
         top: 15px;
         left: 50%;
         transform: translateX(-50%);
