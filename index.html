@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste da JiliA</title>
+    <title>Webchat</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <script defer src="./assets/script.js"></script>
 </head>
 <body>
-    
-    <div class="modalCaixa">
-        <div class="modalJanela hidden">
-            <div id="modalContent">
-                <div class="caixaBotao iconeAumentar">
-                    <img class="icones" src="./assets/img/icon-telacheia.png">
-                </div>
-                <div class="caixaBotao iconeFechar">
-                    <img class="icones" src="./assets/img/icon-fechatela.png">
-                </div>
-                <iframe src="https://chatbot.atrativoinvest.com.br/groc-ia-atrativo" width="100%" height="100%" style="border: none;"></iframe>
+
+    <div class="camadaTela">
+
+        <div id="modal" class="modalJanela hidden">
+            <div class="modalBotao">
+                <img id="iconeAumentar" class="iconeModal" src="./assets/img/icon-telacheia.png">
+                <img id="iconeFechar" class="iconeModal" src="./assets/img/icon-fechatela.png">
             </div>
+            <iframe class="modalConteudo" src="https://chatbot.atrativoinvest.com.br/groc-ia-atrativo"></iframe>
         </div>
-        <div class="modalAvatar">
-            <div class="modalBalao">
-                <span>Olá, eu sou a <strong>JuliA</strong>!<br /> Se precisar de ajuda, fale comigo...</span>
+
+        <div class="camadaBalao">
+            <div class="balaoTexto">
+                Olá, eu sou a JuliA! Se precisar de ajuda, fale comigo...
             </div>
-            <div id="balaoTriangulo"></div>
-            <div class="modalFoto">
-                <img class="fotoAtendente" src="assets/img/avatar-ia.jpg">
-            </div>
+            <div class="balaoAba"></div>
         </div>
+
+        <div class="camadaAvatar">
+            <img id="avatar" class="avatarIa" src="./assets/img/avatar-julia-2024.jfif">
+        </div>
+
     </div>
-
-    <script src="./assets/script.js"></script>
-
+    
 </body>
 </html>
