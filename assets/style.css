@@ -137,4 +137,7 @@ body {
         right: 0;
         bottom: 0;
     }
+    .camadaAvatar {
+        bottom: 10px;
+    }
 }
