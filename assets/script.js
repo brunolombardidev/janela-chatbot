@@ -6,16 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let isFullScreen = false; // Estado para o tamanho da tela
 
-    // Função para abrir o modal com fade in
+    // Abrir modal com fade in
     avatar.addEventListener('click', function() {
         modal.style.opacity = 0;
         modal.classList.remove('hidden');
         
-        // Faz o fade in
+        // Faz FadeIn
         setTimeout(() => {
             modal.style.transition = 'opacity 1s ease';
             modal.style.opacity = 1;
-        }, 10); // Timeout pequeno para garantir a remoção da classe hidden antes de aplicar a transição
+        }, 10); // Garante remoção do hidden para transição
     });
 
     // Função para fechar o modal com fade out
@@ -26,17 +26,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // Após o fade out, adiciona a classe hidden
         setTimeout(() => {
             modal.classList.add('hidden');
-        }, 1000); // Duração do fade out antes de ocultar o modal
+        }, 1000); // Duração do FadeOut antes de ocultar
     });
 
-    // Função para alternar o tamanho do modal com uma transição suave
+    // Alterna tamanho do modal
     iconeAumentar.addEventListener('click', function() {
-        // Verifica se a tela é maior que 768px
+        // Verifica tela maior que 768px
         if (window.innerWidth > 768) {
             if (isFullScreen) {
                 modal.style.transition = 'width 1s ease, height 1s ease';
                 modal.style.width = '350px';
-                modal.style.height = '60%';
+                modal.style.height = '80%';
             } else {
                 modal.style.transition = 'width 1s ease, height 1s ease';
                 modal.style.width = '97vw';
