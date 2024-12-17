@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metas e Vendas</title>
+    <!-- FontAwesome CDN (Corrigido) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        body {
+            padding: 20px;
+            background-color: #eaeaea;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #444;
+        }
+
+        .filtro-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        select, input, button {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 38px; /* Padronização de altura */
+        }
+
+        button {
+            background-color: #2edd80;
+            color: #333;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00ff77;
+        }
+
+        hr {
+            margin: 20px;
+        }
+
+        /* Containers */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center; /* Centraliza o título */
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #bbb;
+            color: #333;
+        }
+
+        /* Ícones */
+        i {
+            font-size: 1.2em;
+            color: #555;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        i:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho com Título e Filtro -->
+    <div class="header">
+        <h1>Metas e Vendas</h1>
+        <div class="filtro-container">
+            <label for="select-ano">Ano:</label>
+            <select id="select-ano">
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+            </select>
+
+            <label for="select-mes">Mês:</label>
+            <select id="select-mes">
+                <option>Janeiro</option>
+                <option>Fevereiro</option>
+                <option>Março</option>
+            </select>
+
+            <button type="submit">Filtrar</button>
+        </div>
+    </div>
+
+    <!-- Container Metas -->
+    <div class="container">
+        <div class="section-title">Cadastro de Meta</div>
+        <form>
+            <label for="meta-ano">Ano:</label>
+            <select id="meta-ano">
+                <option>2024</option>
+            </select>
+
+            <label for="meta-mes">Mês:</label>
+            <select id="meta-mes">
+                <option>Janeiro</option>
+            </select>
+
+            <label for="meta-valor">Valor da Meta (R$):</label>
+            <input type="number" id="meta-valor" placeholder="10000.00" />
+
+            <button type="button">Cadastrar Meta</button>
+        </form>
+
+        <hr>
+
+        <div class="section-title">Meta Registrada</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ano</th>
+                    <th>Mês</th>
+                    <th>Meta (R$)</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024</td>
+                    <td>Janeiro</td>
+                    <td>10,000.00</td>
+                    <td>
+                        <i class="fas fa-edit" title="Editar"></i>
+                        <i class="fas fa-trash" title="Excluir"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Container Vendas -->
+    <div class="container">
+        <div class="section-title">Cadastro de Venda</div>
+        <form>
+            <label for="venda-valor">Valor da Venda (R$):</label>
+            <input type="number" id="venda-valor" placeholder="1500.00" />
+
+            <button type="button">Cadastrar Venda</button>
+        </form>
+
+        <hr>
+
+        <div class="section-title">Vendas Registradas</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Ano</th>
+                    <th>Mês</th>
+                    <th>Valor (R$)</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João</td>
+                    <td>2024</td>
+                    <td>Janeiro</td>
+                    <td>1,500.00</td>
+                    <td>
+                        <i class="fas fa-edit" title="Editar"></i>
+                        <i class="fas fa-trash" title="Excluir"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>2024</td>
+                    <td>Janeiro</td>
+                    <td>2,000.00</td>
+                    <td>
+                        <i class="fas fa-edit" title="Editar"></i>
+                        <i class="fas fa-trash" title="Excluir"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
